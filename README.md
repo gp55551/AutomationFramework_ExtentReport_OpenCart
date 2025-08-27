@@ -16,12 +16,13 @@ This is a demo project for Selenium Page Object Model with Extent reporting ans 
 5. Find results in report/Index.html
 
 ### Jenkins Steps - 
-1. Start server - java -jar C:\Users\rajde\Downloads\jenkins.war.
-2. navigate - http://localhost:8080, Setup credentials.
-3. add Maven and Java home path in Mangae Jenkins.
-4. create item + add git url = add build actions steps.
-5. Build job.
-6. Check console.
+1. Install jenkins.war from jenkins website - https://www.jenkins.io/download/
+2. Start jenkins server - java -jar C:\Users\rajde\Downloads\jenkins.war.
+3. Navigate to Jenkins dashboard - http://localhost:8080, Setup credentials.
+4. Add Maven and Java home path in Mangae Jenkins.
+5. Create item + add git url = add build actions steps.
+6. Build job.
+7. Check console.
    
 ### Report -
 
