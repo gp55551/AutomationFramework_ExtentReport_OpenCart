@@ -1,7 +1,8 @@
 package test;
 
 import org.testng.ITestResult;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import page.BasePage;
 import util.LoggerLoad;
 import util.driver.DriverFactory;

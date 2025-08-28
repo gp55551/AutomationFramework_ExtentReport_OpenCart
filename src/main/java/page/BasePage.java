@@ -24,9 +24,4 @@ public class BasePage {
             driver.findElement(by).click();
         }
     }
-
-    public void waitUntilElementVisible(By by) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-    }
 }

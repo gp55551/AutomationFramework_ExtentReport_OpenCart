@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="selenium-testng-chaintest-report" />
         <module name="selenium-testng-allure-report" />
+        <module name="selenium-testng-jenkins" />
       </profile>
     </annotationProcessing>
   </component>

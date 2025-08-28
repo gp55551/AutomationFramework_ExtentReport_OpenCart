@@ -4,56 +4,41 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import static util.CommonMethods.*;
+import static util.driver.DriverHolder.getDriver;
 
 public class HomePage extends BasePage {
 
-    private final By logo = By.id("nav-logo-sprites");
-    private final By searchBox = By.id("twotabsearchtextbox");
-    private final By searchButton = By.id("nav-search-submit-button");
-    private final By firstSearchResultName = By.xpath("(//*[text()='Results']/following::a/h2/span)[1]");
-    private final By mxPlayerLink = By.xpath("//a[text()='MX Player']");
-    private final By helloSignInLink = By.xpath("//*[text()='Hello, sign in']");
-
+    private final By logo = By.id("logo");
+    private final By searchField = By.xpath("//*[@name='search']");
+    private final By searchButton = By.xpath("//*[@name='search']/following::button[1]");
+    private final String homePageURL = "https://naveenautomationlabs.com/opencart/index.php?route=common/home";
 
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
-    public HomePage verifyHomePage()
+    public HomePage clickLogo()
+    {
+        click(driver, logo);
+        return this;
+    }
+
+    public HomePage verifyLogoPresent()
     {
         verifyElementDisplayed(driver, logo);
         return this;
     }
 
-    public HomePage searchProduct(String product)
+    public HomePage verifyHomePage()
     {
-        sendKeys(driver, searchBox,product);
-        click(driver, searchButton);
+        Assert.assertEquals(getDriver().getCurrentUrl(), homePageURL);
         return this;
     }
 
-    public HomePage verifyFirstLink(String product)
+    public HomePage verifySearchFieldAndButton()
     {
-        waitUntilElementVisible(firstSearchResultName);
-        Assert.assertTrue(driver.findElement(firstSearchResultName).getText().contains(product));
+        verifyElementDisplayed(driver, searchField);
+        verifyElementDisplayed(driver, searchButton);
         return this;
-    }
-
-    public HomePage verifyMXPlayerLink()
-    {
-        verifyElementDisplayed(driver, mxPlayerLink);
-        return this;
-    }
-
-    public MXPlayerPage clickMXPlayerLink()
-    {
-        click(driver, mxPlayerLink);
-        return new MXPlayerPage(driver);
-    }
-
-    public SignInPage clickSignInLink()
-    {
-        click(driver,helloSignInLink);
-        return new SignInPage(driver);
     }
 }

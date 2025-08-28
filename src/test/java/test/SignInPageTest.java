@@ -1,7 +1,7 @@
 package test;
 
 import org.testng.annotations.Test;
-import page.HomePage;
+import page.SignInPage;
 import util.LoggerLoad;
 
 import static util.driver.DriverHolder.getDriver;
@@ -12,9 +12,8 @@ public class SignInPageTest extends BaseTest {
     public void verifySignInPage() {
         LoggerLoad.info("verify Sign In Page");
 
-        HomePage homePage = new HomePage(getDriver());
-        homePage.verifyHomePage()
-                .clickSignInLink()
+        SignInPage signInPage = new SignInPage(getDriver());
+        signInPage
                 .verifySignInHomepage();
     }
 
@@ -22,9 +21,29 @@ public class SignInPageTest extends BaseTest {
     public void verifySignInFields() {
         LoggerLoad.info("verify Sign In Fields");
 
-        HomePage homePage = new HomePage(getDriver());
-        homePage.verifyHomePage()
-                .clickSignInLink()
+        SignInPage signInPage = new SignInPage(getDriver());
+        signInPage
+                .verifySignInHomepage()
                 .verifyFields();
+    }
+
+    @Test(priority = 3)
+    public void verifyForgottenPasswordPresent() {
+        LoggerLoad.info("verify Forgotten Password Present");
+
+        SignInPage signInPage = new SignInPage(getDriver());
+        signInPage
+                .verifySignInHomepage()
+                .verifyForgottenPasswordDisplayed();
+    }
+
+    @Test(priority = 4)
+    public void loginToAccount() {
+        LoggerLoad.info("log in To Account");
+
+        SignInPage signInPage = new SignInPage(getDriver());
+        signInPage
+                .verifySignInHomepage()
+                .loginToAccount();
     }
 }
