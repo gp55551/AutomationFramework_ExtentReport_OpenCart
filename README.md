@@ -7,13 +7,18 @@ This is a demo project for Selenium Page Object Model with Extent reporting ans 
 * Maven
 * IntelliJ IDEA
 * Extent reoport libraries
+* Jenkins setup ready and jenkins.war server is running
 
 ### Steps
 1. Clone this project
 2. Open the project in Intellij IDEA
-3. Add Chaintest library, properties file, annotations in tests.
-4. Run through maven with command -> clean test -DXmlFile=TestNG.xml
-5. Find results in report/Index.html
+3. Build and Run through maven with command -> clean test -DXmlFile=TestNG.xml
+4. Find results in report/Index.html
+
+### Additional Configs
+1. extent Report
+2. Added Logs
+3. Implemented password encryption and decryption codes.
 
 ### Jenkins Steps - 
 1. Install jenkins.war from jenkins website - https://www.jenkins.io/download/
@@ -26,5 +31,4 @@ This is a demo project for Selenium Page Object Model with Extent reporting ans 
    
 ### Report -
 
-<img width="1920" height="1020" alt="image" src="https://github.com/user-attachments/assets/1fb86006-60c3-4dbe-a90d-c233563ace26" />
-
+![img_1.png](img_1.png)
