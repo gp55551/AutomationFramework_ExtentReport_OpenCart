@@ -41,4 +41,11 @@ public class HomePage extends BasePage {
         verifyElementDisplayed(driver, searchButton);
         return this;
     }
+
+    public SearchPage searchProduct(String text)
+    {
+        sendKeys(driver, searchField,text);
+        click(driver, searchButton);
+        return new SearchPage(driver);
+    }
 }
