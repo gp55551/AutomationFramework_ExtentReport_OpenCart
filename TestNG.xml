@@ -8,6 +8,7 @@
         <classes>
             <class name="test.HomepageTest" />
             <class name="test.SignInPageTest" />
+            <class name="test.SearchProductTest" />
         </classes>
     </test>
 </suite>
