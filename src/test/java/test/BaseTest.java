@@ -15,9 +15,10 @@ public class BaseTest {
 
     @BeforeMethod
     public void before() {
+        LoggerLoad.info("===========[ Stating Browser ]===========");
         setDriver(DriverFactory.getNewDriverInstance(getProperty("browser")));
         getDriver().manage().window().maximize();
-        LoggerLoad.info("Stating Application.........");
+        LoggerLoad.info("===========[ Navigating to Application ]===========");
         getDriver().get(getProperty("application_url"));
         BasePage.clickContinueShopping(getDriver());
 
@@ -27,7 +28,7 @@ public class BaseTest {
     public void after(ITestResult result) {
         if (getDriver() != null) {
             getDriver().quit();
-            LoggerLoad.info("Closing Application.........");
+            LoggerLoad.info("===========[ Quiting Browser ]===========");
         }
     }
 }
